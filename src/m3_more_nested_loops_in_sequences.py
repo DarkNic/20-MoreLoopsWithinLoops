@@ -11,7 +11,7 @@ def main():
     """ Calls the other functions to test them. """
     run_test_largest_number()
     run_test_largest_negative_number()
-    run_test_first_is_elsewhere_too()
+ #   run_test_first_is_elsewhere_too()
 
 
 def run_test_largest_number():
@@ -78,7 +78,12 @@ def largest_number(seq_seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-
+    x=None
+    for k in range(len(seq_seq)):
+        for j in range(len(seq_seq[k])):
+            if seq_seq[k][j]>x:
+               x=seq_seq[k][j]
+    return x
 
 def run_test_largest_negative_number():
     """ Tests the    largest_negative_number    function. """
@@ -373,9 +378,14 @@ def first_is_elsewhere_too(seq_seq):
     #   in this problem, as doing so would defeat the goal of providing
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
-
-
+    for k in range(len(seq_seq)):
+        for j in range(len(seq_seq[k])):
+            if seq_seq[k][j]==seq_seq[k-k][j-j]:
+                return True
+    return False
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+
 main()
