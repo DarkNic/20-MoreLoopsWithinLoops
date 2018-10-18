@@ -1,3 +1,5 @@
+import math as m
+
 """
 This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
@@ -78,11 +80,16 @@ def largest_number(seq_seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-    x=None
+    x = None
     for k in range(len(seq_seq)):
-        for j in range(len(seq_seq[k])):
-            if seq_seq[k][j]>x:
-               x=seq_seq[k][j]
+        if len(seq_seq[k]) != 0:
+            x = seq_seq[k][0]
+    if x is not None:
+        for k in range(len(seq_seq)):
+            for j in range(len(seq_seq[k])):
+                if seq_seq[k][j] > x:
+                    x = seq_seq[k][j]
+
     return x
 
 def run_test_largest_negative_number():
