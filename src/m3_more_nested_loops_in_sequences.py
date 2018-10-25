@@ -414,7 +414,7 @@ def first_is_elsewhere_too(seq_seq):
     #   in this problem, as doing so would defeat the goal of providing
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
-    x=0
+    x = 0
     for k in range(len(seq_seq)):
         if len(seq_seq[k]) == 0:
             x = x+1
